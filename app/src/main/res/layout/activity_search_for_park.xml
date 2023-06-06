@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomSection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".fragments_owners.SearchForParkActivity" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomSection"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/plusjakartasansbold"
+            android:text="Search for Park"
+            android:textColor="@color/mid_black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.151" />
+
+        <EditText
+            android:id="@+id/searchBar"
+            style="@style/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Where to?"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:selectAllOnFocus="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/myLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/plusjakartasansmedium"
+                android:text="Your Location"
+                android:textColor="#313131"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/plusjakartasansmedium"
+                android:text=""
+                android:textColor="#505050"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/locator_logo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/view_requests_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Requests"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myLocation"
+            app:layout_constraintVertical_bias="0.538" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoSection"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:background="#FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/spot_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/plusjakartasansbold"
+            android:text=""
+            android:textColor="@color/mid_black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.151" />
+
+        <TextView
+            android:id="@+id/charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/plusjakartasansbold"
+            android:text=""
+            android:textColor="@color/green"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spot_name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="29dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/profile_org"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintStart_toEndOf="@+id/spot_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_close_24" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profile_org"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/charge"
+            app:layout_constraintVertical_bias="1.0">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plusjakartasansmedium"
+                android:text="Facilitated by:"
+                android:textColor="#313131"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.024" />
+
+            <TextView
+                android:id="@+id/name_org"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/plusjakartasansmedium"
+                android:text=""
+                android:textColor="#505050"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/pfp_container"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.212" />
+
+            <TextView
+                android:id="@+id/view_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/plusjakartasansmedium"
+                android:text="View Profile"
+                android:textColor="@color/link_color"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/pfp_container"
+                app:layout_constraintTop_toBottomOf="@+id/name_org"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pfp_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.243" >
+
+                <ImageView
+                    android:id="@+id/pfp_org"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    tools:src="@drawable/profile" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/request_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.943"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_profile" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        app:srcCompat="@drawable/baseline_arrow_circle_left_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

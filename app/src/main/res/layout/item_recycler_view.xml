@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="5dp"
+    app:contentPadding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/spot_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasansbold"
+            android:text="_"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasansmedium"
+            android:text="_"
+            android:textColor="#00B342"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/is_accepted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasansmedium"
+            android:text="Your request is accepted by the organization. Plaese confirm your spot!"
+            android:textColor="#7A7A7A"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/is_confirmed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasansmedium"
+            android:text="You confirmed this parking spot. You can still remove this parking spot or get directions on Google Maps"
+            android:textColor="#7A7A7A"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/button_section"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/delete_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#EF3B3B"
+                android:text="Delete" />
+
+            <Button
+                android:id="@+id/confirm_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2EBC4D"
+                android:text="Confirm"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/directions_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2374AA"
+                android:text="Get Directions"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
