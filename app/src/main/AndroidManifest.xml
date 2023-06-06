@@ -65,7 +65,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCaZLH5FsAJImKRolXt1xRyACgJEcT_ku0" />
+            android:value="YOUR_API_KEY" />
 
         <activity
             android:name=".fragments_owners.BookForParkActivity"
