@@ -37,6 +37,7 @@ public class AboutFragment extends Fragment {
         web = v.findViewById(R.id.web);
         details = v.findViewById(R.id.details);
 
+        //get about data from firebase
         DatabaseHelper.mDatabase().child("about").child("details").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -51,6 +52,7 @@ public class AboutFragment extends Fragment {
             }
         });
 
+        //get links from firebase
         DatabaseHelper.mDatabase().child("about").child("links").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -69,16 +71,19 @@ public class AboutFragment extends Fragment {
         return v;
     }
 
+    //set click listener on social icons
     private void setClickListener (DataSnapshot snapshot, ImageView imageView) {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //if data available open url
+                //if not show toast message
                 if (snapshot.exists()) {
-                        Uri webpage = Uri.parse(snapshot.getValue().toString());
-                        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-                        if (intent.resolveActivity(getContext().getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
+                    Uri webpage = Uri.parse(snapshot.getValue().toString());
+                    Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                    if (intent.resolveActivity(getContext().getPackageManager()) != null) {
+                        startActivity(intent);
+                    }
                 } else {
                     Toast.makeText(getContext(), "Not available", Toast.LENGTH_SHORT).show();
                 }

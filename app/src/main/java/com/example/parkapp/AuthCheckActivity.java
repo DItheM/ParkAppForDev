@@ -53,6 +53,9 @@ public class AuthCheckActivity extends AppCompatActivity {
         }, 1000);
     }
 
+    //check if a user is already signed in
+    //if yes, system will go to dashboard screen
+    //if not, system will go to sign in screen
     public void checkAuth() {
         if (user != null) {
             DatabaseHelper.mDatabase().child("userData").child(user.getUid()).child("accType").get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
